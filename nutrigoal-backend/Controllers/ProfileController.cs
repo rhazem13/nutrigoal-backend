@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using nutrigoal_backend.Data;
 using nutrigoal_backend.Models;
 using nutrigoal_backend.Models.Entities;
@@ -24,7 +25,7 @@ namespace nutrigoal_backend.Controllers
         {
             // TODO: Replace wth JWT authentication to get user ID 
             var userId = 1; // Harcoded for development purposes, replace with User.FindFirstValue(ClaimTypes.NameIdentifier) 
-            var profile = _context.Profiles.FirstOrDefault(p => p.UserId == userId);
+            var profile = _context.Profiles.AsNoTracking().FirstOrDefault(p => p.UserId == userId);
             if (profile == null)
             {
                 return NotFound("Profile not found.");
