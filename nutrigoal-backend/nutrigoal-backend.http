@@ -1,0 +1,6 @@
+@nutrigoal_backend_HostAddress = http://localhost:5094
+
+GET {{nutrigoal_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
