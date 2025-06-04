@@ -11,6 +11,8 @@
         public float ProteinTarget { get; set; }
         public float CarbTarget { get; set; }
 
+
+
         public User User { get; set; } = null!;
 
         public string FirstName { get; set; } = string.Empty;
@@ -27,5 +29,6 @@
                 return age;
             }
         }
+        public char Gender { get; set; }
     }
 }
